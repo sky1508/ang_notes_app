@@ -73,7 +73,7 @@
 						
 						<div id="secondsub2">
 						<label>Editable?</label>
-						<label><input type="checkbox">yes</label>
+						<label><input type="checkbox" ng-checked="false" ng-model="clickedNote.editable" ng-click="enableSaveBtn()">yes</label>
 						</div>
 						
 						<br>
@@ -84,7 +84,7 @@
 					</div>
 
 					<div id="third">
-						<button type="submit" class="btn btn-default saveBtn" ng-click="saveNote()" data-dismiss="modal">Save</button>
+						<button id="saveBtn" type="submit" class="btn btn-default saveBtn" ng-disabled="true" ng-click="saveNote()" data-dismiss="modal">Save</button>
 					</div>
 				</form>
 			</div>  

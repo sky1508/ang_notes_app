@@ -9,6 +9,9 @@ myApp.controller("myController", function($scope){
 	$scope.lastUpdate = {};
 	$scope.orderByField = 'title';
 	$scope.reverseSort = false;
+	$scope.clickedNote.editable = { 
+           checked: true
+       };
 
 	$scope.notes = [
 		{title: "A note to remember", timeCreated: "10/19/14 5:32", textArea: "ABC"},
@@ -81,6 +84,9 @@ myApp.controller("myController", function($scope){
 		}
 	};
 	
-	
+	$scope.enableSaveBtn = function() {
+		var b1 = document.getElementById("saveBtn");
+		b1.disabled = false;
+	}
 
 });
