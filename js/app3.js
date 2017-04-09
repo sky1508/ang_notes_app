@@ -61,6 +61,26 @@ myApp.controller("myController", function($scope){
 		}
 	};
 	
+	$scope.displaySummary  = function(){
+		var b1 = document.getElementById("summary");
+		
+		if(b1.className === "summaryClass1") {
+			b1.className = "summaryClass2";
+		}
+		else if(b1.className === "summaryClass2"){
+			b1.className = "summaryClass1";
+		}
+		
+		var t1 = document.getElementById("tab1");
+		
+		if(t1.className === "table table-hover") {
+			t1.className = "table table-hover tableClass";
+		}
+		else if(t1.className === "table table-hover tableClass"){
+			t1.className = "table table-hover";
+		}
+	};
+	
 	
 
 });

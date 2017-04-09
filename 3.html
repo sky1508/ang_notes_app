@@ -34,25 +34,28 @@
 					</div>
 					<ul class="nav navbar-nav navbar-right">
 					  <li><a href="#"data-toggle="collapse" data-target="#addNew" ng-click="changeText()"><span id="addNewSpan" class="glyphicon glyphicon-plus pull-right"></span></a></li>
-					  <li><a href="#" data-toggle="collapse" data-target="#summary"><span class="glyphicon glyphicon-menu-hamburger pull-right"></span></a></li>
+					  <li><a href="#" ng-click="displaySummary()" data-target="#summary"><span class="glyphicon glyphicon-menu-hamburger pull-right"></span></a></li>
 					</ul>
 				</div>
 			</nav>
     
 			<hr>
-			<div id="summary" class=" summaryClass collapse">
+			<div id="summary" class="summaryClass1">
 				<form>
-					<label>Summary</label>
-					<div class="form-group">
-						<label for="notes">{{lastUpdate.totalNotes}} Notes</label>
+					<div class="summaryTitleDiv">
+						<label>Summary</label>
 					</div>
-					<div class="form-group">
-						<label for="text">last updated</label>
-						<label for="text">{{lastUpdate.lastUpdatedTime | date:'dd/MM/yy HH:mm'}}</label>
+					<div class="summaryNoteDiv">
+						<label class="summaryTotalLabel "for="notes">{{lastUpdate.totalNotes}}</label>
+						<label class="summaryTotalLabel2">notes</label>
 					</div>
-					<div class="form-group">
-						<label for="text">last note updated</label>
-						<label for="text">{{lastUpdate.lastNote}}</label>
+					<div class="summaryLastNoteDiv">
+						<label class="summaryLastNoteLabel" for="time">last updated</label>
+						<label class="summaryLastNoteLabel2" for="time">{{lastUpdate.lastUpdatedTime | date:'dd/MM/yy HH:mm'}}</label>
+					</div>
+					<div class="summaryLastTimeDiv">
+						<label class="summaryLastTimeLabel">last note updated</label>
+						<label class="summaryLastTimeLabel2">{{lastUpdate.lastNote}}</label>
 					</div>
 				</form>
 			  </div>  
@@ -86,16 +89,16 @@
 				</form>
 			</div>  
 
-			<table class="table table-hover">
+			<table id= "tab1" class="table table-hover">
 				<thead>
 					<tr>
 						<th>
-						<a href="#" ng-click="orderByField='title'; reverseSort = !reverseSort">
+						<a href="#" class="tableColumnTitleClass" ng-click="orderByField='title'; reverseSort = !reverseSort">
 							Title <span ng-show="orderByField == 'title'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
 						</a>
 						</th>
 						<th>
-							<a href="#" ng-click="orderByField='timeCreated'; reverseSort = !reverseSort">
+							<a href="#" class="tableColumnTitleClass" ng-click="orderByField='timeCreated'; reverseSort = !reverseSort">
 							Time Created <span ng-show="orderByField == 'timeCreated'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
 							</a>
 						</th>
@@ -103,8 +106,8 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat = "note in notes |orderBy:orderByField:reverseSort">
-						<td ng-click="selectNote(note)">{{note.title}}</td>
-						<td ng-click="selectNote(note)">{{note.timeCreated | date:'dd/MM/yy HH:mm'}}</td>
+						<td class="tableTDClass" ng-click="selectNote(note)">{{note.title}}</td>
+						<td class="tableTDClass" ng-click="selectNote(note)">{{note.timeCreated | date:'dd/MM/yy HH:mm'}}</td>
 						<!--<td>
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete" ng-click="selectNote(note)">Delete</button>
 						</td>-->
