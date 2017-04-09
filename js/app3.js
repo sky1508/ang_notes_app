@@ -7,11 +7,13 @@ myApp.controller("myController", function($scope){
 	$scope.clickedNote = {};
 	$scope.message = "";
 	$scope.lastUpdate = {};
+	$scope.orderByField = 'title';
+	$scope.reverseSort = false;
 
 	$scope.notes = [
-		{title: "A note to remember", timeCreated: "10/04/14 5:32", textArea: "ABC"},
+		{title: "A note to remember", timeCreated: "10/19/14 5:32", textArea: "ABC"},
 		{title: "A new note", timeCreated: "11/18/14 8:19", textArea: "BBC"},
-		{title: "An old note", timeCreated: "11/18/14 8:19", textArea: "DBC"}
+		{title: "An old note", timeCreated: "11/18/14 10:19", textArea: "DBC"}
 	];
 
 	$scope.saveNote = function(){
@@ -36,14 +38,16 @@ myApp.controller("myController", function($scope){
 		
 	};
 	
+	//To Set the current note
 	$scope.selectNote = function(note){
-		console.log(note);
+		//console.log(note);
 		$scope.clickedNote = note;
 	};
 
+	/*
 	$scope.deleteNote = function(){
 		$scope.notes.splice($scope.notes.indexOf($scope.clickedNote), 1);
-	};
+	};*/
 
 	//Changing + sign to - and vice verca
 	$scope.changeText = function(){

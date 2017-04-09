@@ -19,6 +19,7 @@
     border-bottom: 1px solid #eee;
 }
 
+/*Contains Notes and + sign*/*/
 .navbar {
     position: relative;
     min-height: 50px;
@@ -26,6 +27,7 @@
     border: 1px solid transparent;
 }
 
+/*Contains the whole app except Navbar and Header*/
 .jumbotron {
     padding-top: 0px !important;
     padding-bottom: 0px;
@@ -62,3 +64,114 @@
     border: 0;
     border-top: 1px solid #eee;
 }
+
+/*addNew Div containing Create or Edit text*/
+#first {
+	float: left;
+    padding-right: 35px;
+    font-size: 24px;
+    font-family: helvetica;
+    color: #f1f1f1;
+}
+
+/*addNew Div containing title, textArea and checkbox*/
+#second {
+	float:left;
+	background-color: #26add2 !important;
+	padding-top: 5px;
+    color: #f1f1f1;
+    font-family: Helvetica;
+}
+
+/*addNew Div containing title*/
+#secondsub1 {
+	float:left;
+}
+
+/*addNew Div containing checkbox*/
+#secondsub2 {
+	float:left;
+	padding-top: 30px;
+	padding-left: 10px;
+}
+
+/*addNew Div containing textArea*/
+#secondsub3 {
+	float:left;
+}
+
+/*addNew Div containing save button*/
+#third {
+	float:left;
+	padding-top: 200px;
+    padding-left: 20px;
+}
+
+/*addNew Div properties after uncollapsing*/
+.addNewClass, .collapse.in {
+	display: flex;
+	height:250px;
+	margin-top:5px;
+	border-bottom:1px;
+	border-bottom-color: #0588ac;
+	background-color: #26add2 !important;
+}
+
+/*addNew Div properties while uncollapsing*/
+.addNewClass, .collapsing {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	-webkit-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
+	-webkit-transition-duration: .35s;
+       -o-transition-duration: .35s;
+          transition-duration: .35s;
+	-webkit-transition-property: height, visibility;
+       -o-transition-property: height, visibility;
+          transition-property: height, visibility;
+}
+
+/*addNew Div properties before uncollapsing*/
+.addNewClass, .collapse {
+	display: none;
+}
+
+/*addNew Div title*/
+.titleInput {
+	background-color: #fafbfb;
+    color: #666b6d;
+    padding: 10px 5px;
+	width:275px;
+}
+
+/*addNew Div textArea Label*/
+.textAreaLabelClass {
+	padding-top: 30px;
+}
+
+/*addNew Div textArea Input Box*/
+.textAreaInput {
+	color: #474e4f;
+    size: 3px;
+    offset-distance: 3px;
+	width:400px;	
+}
+
+/*addNew Div Save Btn*/
+.saveBtn {
+	color: #474e4f;
+    font-family: helvetica;
+    font-size: 18px;
+    padding: 3px 18px;
+}
+
+/*summary div class*/
+#summaryClass>collapse in {
+	position: relative;
+    left: 660px;
+    width: 300px;
+	height: 150px;
+}
+

@@ -6,6 +6,8 @@ myApp.controller("myController", function($scope){
 	$scope.newUser = {};
 	$scope.clickedUser = {};
 	$scope.message = "";
+	
+	
 
 	$scope.users = [
 		{username: "sky", fullName: "Sushil kumar", email: "sky@gmail.com"},
