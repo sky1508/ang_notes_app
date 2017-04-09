@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>App</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/app3.css" rel="stylesheet">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app3.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+	<body ng-app="myApp" ng-controller="myController">
+    
+		<div class="container">
+	
+			<div class="page-header">
+				<h1 class="headerClass">Services</h1>      
+			</div>
+			
+			<div class="jumbotron">
+
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+					<a class="navbar-brand" href="">Notes</a>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+					  <li><a href="#"data-toggle="collapse" data-target="#addNew" ng-click="changeText()"><span id="addNewSpan" class="glyphicon glyphicon-plus pull-right"></span></a></li>
+					  <li><a href="#" data-toggle="collapse" data-target="#summary"><span class="glyphicon glyphicon-menu-hamburger pull-right"></span></a></li>
+					</ul>
+				</div>
+			</nav>
+    
+			<hr>
+			<div id="summary" class="collapse">
+				<form>
+					<label>Summary</label>
+					<div class="form-group">
+						<label for="notes">{{lastUpdate.totalNotes}} Notes</label>
+					</div>
+					<div class="form-group">
+						<label for="text">last updated</label>
+						<label for="text">{{lastUpdate.lastUpdatedTime | date:'dd/MM/yy HH:mm'}}</label>
+					</div>
+					<div class="form-group">
+						<label for="text">last note updated</label>
+						<label for="text">{{lastUpdate.lastNote}}</label>
+					</div>
+				</form>
+			  </div>  
+		
+			<div id="addNew" class="collapse">
+				<form>
+					<label>Create or Edit</label>
+					<div class="form-group">
+						<label for="email">Title</label>
+						<input type="text" class="form-control" id="title" ng-model="clickedNote.title">
+					</div>
+					<div class="form-group">
+						<label for="text">Text</label>
+						<textarea class="form-control" rows="3" id="textArea" ng-model="clickedNote.textArea"></textarea>
+					</div>
+					<div class="checkbox">
+						<label>Editable?</label>
+						<label><input type="checkbox">yes</label>
+					</div>
+					<button type="submit" class="btn btn-default" ng-click="saveNote()" data-dismiss="modal">Save</button>
+				</form>
+			</div>  
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+					<th>Title</th>
+					<th>Time created</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "note in notes">
+						<td ng-click="selectNote(note)">{{note.title}}</td>
+						<td ng-click="selectNote(note)">{{note.timeCreated | date:'dd/MM/yy HH:mm'}}</td>
+						<td>
+							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete" ng-click="selectNote(note)">Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		
+			</div>
+		</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create or Edit</h4>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="control-label col-sm-2">Title</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="clickedNote.title">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-2">Time Created</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="clickedNote.timeCreated">
+              </div>
+            </div>
+            
+            <div class="form-group"> 
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" ng-click="saveNote()" data-dismiss="modal">Save</button>
+              </div>
+            </div>
+          </form>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  
+  <div class="modal fade" id="myModalDelete" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Are You Sure?</h4>
+        </div>
+        <div class="modal-body">
+          <strong style="color: red;">You are going to delete : {{clickedNote.title}}.</strong>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="deleteNote()">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    
+  </body>
+</html>

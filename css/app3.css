@@ -1,0 +1,64 @@
+
+.container {
+	border:1px solid black;
+	background: #ebebeb;
+    padding: 10px;
+    width: 1100px;
+}
+
+.headerClass {
+	background-color: #919595;
+    color: #ffffff;
+	font-size: 26pt;
+    font-family: arial regular;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 0 0 0;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+
+.jumbotron {
+    padding-top: 0px !important;
+    padding-bottom: 0px;
+	padding-right: 0px;
+    padding-left: 0px;
+	background-color: #fafbfb;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    color: #0d9f6e !important;
+}
+
+.container-fluid {
+    padding-right: 0px; 
+	padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+	background-color:#fafbfb;
+}
+
+.jumbotron>hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
